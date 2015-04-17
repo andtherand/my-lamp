@@ -1,61 +1,64 @@
 my-lamp Cookbook
 ================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+A very opinionated LAMP-Stack.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - my-lamp needs toaster to brown your bagel.
+```ruby
+depends 'apache2', '>= 3.0.1'
+depends 'mysql', '= 5.6.1'
+depends 'php', '>= 1.5.0'
+depends 'composer', '>= 2.0.0'
+depends 'apt', '>= 2.7.0'
+depends 'build-essential', '>= 2.2.2'
+depends 'openssl', '>= 4.0.0'
+depends 'php-intl', '>= 0.0.1'
+depends 'timezone-ii', '>= 0.2.0'
+depends 'xdebug', '>= 0.0.13'
+depends 'my-utils-packages', '>= 0.0.1'
+depends 'git', '>= 4.0.1'
+depends 'mysql2_chef_gem' ## github: mychiara/mysql2_chef_gem
+```
 
 Attributes
 ----------
 TODO: List your cookbook attributes here.
 
-e.g.
-#### my-lamp::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['my-lamp']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+```ruby
+## TOOLS
 
+default['tz'] = 'Europe/Berlin'
+
+## MYSQL
+
+default['mysql']['allow_remote_root'] = true
+default['mysql']['server_root_password'] = 'root'
+default['mysql']['server_debian_password'] = 'xxx'
+default['mysql']['bind_address'] = '0.0.0.0'
+
+## PHP
+
+default['php']['ext_conf_dir'] = '/etc/php5/apache2/conf.d'
+
+## APACHE
+
+default['apache']['mpm'] = 'prefork'
+default['apache']['listen_ports'] = [80, 443]
+default['apache']['allow_override_default'] = "All"
+```
 Usage
 -----
-#### my-lamp::default
-TODO: Write usage instructions for each cookbook.
+Just include the default recipe like this:
 
-e.g.
-Just include `my-lamp` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[my-lamp]"
-  ]
-}
+```ruby
+include_recipe 'my-lamp'
 ```
+Boom -> you are ready to use a LAMP-stack.
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -65,4 +68,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Andy Ruck(mychiara+cookbooks@gmail.com)

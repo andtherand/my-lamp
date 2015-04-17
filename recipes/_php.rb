@@ -1,4 +1,8 @@
-node.default['php']['ext_conf_dir'] = '/etc/php5/apache2/conf.d'
+#
+# Cookbook Name:: my-lamp
+# Recipe::_php
+#
+# Copyright 2015, shape-VS-stroke (svs)
 
 include_recipe 'php'
 include_recipe 'php::module_curl'

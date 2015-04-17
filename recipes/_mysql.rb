@@ -1,7 +1,8 @@
-node.default['mysql']['allow_remote_root'] = true
-node.default['mysql']['server_root_password'] = 'root'
-node.default['mysql']['server_debian_password'] = 'xxx'
-node.default['mysql']['bind_address'] = '0.0.0.0'
+#
+# Cookbook Name:: my-lamp
+# Recipe::_mysql
+#
+# Copyright 2015, shape-VS-stroke (svs)
 
 include_recipe 'mysql::client'
 include_recipe 'mysql::server'

@@ -1,5 +1,8 @@
-
-node.default['tz'] = 'Europe/Berlin'
+#
+# Cookbook Name:: my-lamp
+# Recipe::_tools
+#
+# Copyright 2015, shape-VS-stroke (svs)
 
 include_recipe 'apt'
 include_recipe 'build-essential'
