@@ -8,5 +8,4 @@ include_recipe 'my-lamp::_tools'
 include_recipe 'my-lamp::_mysql'
 include_recipe 'my-lamp::_php'
 include_recipe 'my-lamp::_apache'
-
-
+include_recipe 'xdebug'

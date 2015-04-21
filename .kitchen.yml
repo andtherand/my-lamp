@@ -1,0 +1,19 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    customize:
+        memory: 3072
+
+    run_list:
+      - recipe[my-lamp::default]
+
+    attributes:

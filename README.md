@@ -16,15 +16,13 @@ depends 'openssl', '>= 4.0.0'
 depends 'php-intl', '>= 0.0.1'
 depends 'timezone-ii', '>= 0.2.0'
 depends 'xdebug', '>= 0.0.13'
-depends 'my-utils-packages', '>= 0.0.1'
+depends 'my_utils_packages', '>= 0.0.1'
 depends 'git', '>= 4.0.1'
 depends 'mysql2_chef_gem' ## github: mychiara/mysql2_chef_gem
 ```
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
 ```ruby
 ## TOOLS
 
