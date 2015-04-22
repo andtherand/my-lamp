@@ -18,7 +18,7 @@ depends 'timezone-ii', '>= 0.2.0'
 depends 'xdebug', '>= 0.0.13'
 depends 'my_utils_packages', '>= 0.0.1'
 depends 'git', '>= 4.0.1'
-depends 'mysql2_chef_gem' ## github: mychiara/mysql2_chef_gem
+depends 'mysql2_chef_gem'
 ```
 
 Attributes
@@ -33,7 +33,11 @@ default['tz'] = 'Europe/Berlin'
 default['mysql']['allow_remote_root'] = true
 default['mysql']['server_root_password'] = 'root'
 default['mysql']['server_debian_password'] = 'xxx'
-default['mysql']['bind_address'] = '0.0.0.0'
+default['mysql']['bind_address'] = '127.0.0.1'
+default['mysql']['service_name'] = 'default' # used for the mysql service instance name
+default['mysql']['version'] = '5.6'
+default['mysql']['client']['version'] = default['mysql']['version']
+default['mysql']['port'] = '3306'
 
 ## PHP
 
