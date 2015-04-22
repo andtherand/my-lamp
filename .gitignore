@@ -1,3 +1,7 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+
 .kitchen/
 .kitchen.local.yml
 *.lock

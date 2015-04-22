@@ -13,7 +13,10 @@ default['tz'] = 'Europe/Berlin'
 default['mysql']['allow_remote_root'] = true
 default['mysql']['server_root_password'] = 'root'
 default['mysql']['server_debian_password'] = 'xxx'
-default['mysql']['bind_address'] = '0.0.0.0'
+default['mysql']['bind_address'] = '127.0.0.1'
+default['mysql']['service_name'] = 'default'
+default['mysql']['version'] = '5.6'
+default['mysql']['port'] = '3306'
 
 ## PHP
 
