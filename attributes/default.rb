@@ -16,6 +16,7 @@ default['mysql']['server_debian_password'] = 'xxx'
 default['mysql']['bind_address'] = '127.0.0.1'
 default['mysql']['service_name'] = 'default'
 default['mysql']['version'] = '5.6'
+default['mysql']['client']['version'] = default['mysql']['version']
 default['mysql']['port'] = '3306'
 
 ## PHP

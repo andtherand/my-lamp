@@ -5,12 +5,8 @@
 # Copyright 2015, shape-VS-stroke (svs)
 
 mysql2_chef_gem node['mysql']['service_name'] do
+  client_version node['mysql']['client']['version']
   action :install
-end
-
-# Configure the MySQL client.
-mysql_client node['mysql']['service_name'] do
-  action :create
 end
 
 # Configure the MySQL service.
