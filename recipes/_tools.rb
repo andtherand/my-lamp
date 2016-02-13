@@ -11,3 +11,4 @@ include_recipe 'timezone-ii'
 include_recipe 'openssl'
 include_recipe 'my_utils_packages'
 
+include_recipe 'my-lamp::_oh_my_zsh'
