@@ -28,3 +28,12 @@ default['php']['ext_conf_dir'] = '/etc/php5/apache2/conf.d'
 default['apache']['mpm'] = 'prefork'
 default['apache']['listen_ports'] = [80, 443]
 default['apache']['allow_override_default'] = "All"
+
+## OH MY ZSH
+
+default[:oh_my_zsh][:users] = [{
+  :login => 'vagrant',
+  :theme => 'robbyrussell',
+  :plugins => ['git', 'php', 'composer'],
+  :home => '/home/vagrant' # optional
+}]
